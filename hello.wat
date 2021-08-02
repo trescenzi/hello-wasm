@@ -13,6 +13,10 @@
         call $logNumber)
   (func $fib (param $length i32)
         i32.const 1
+        call $logNumber
+        i32.const 1
+        call $logNumber
+        i32.const 1
         i32.const 1
         local.get $length
         call $recursiveFib)
@@ -31,7 +35,7 @@
             i32.const 1
             i32.sub
             call $recursiveFib)))
-  (data (i32.const 0) "hello WASM54\00")
+  (data (i32.const 0) "hello WASM\00")
   (func $helloWASM
         i32.const 0
         call $logString)
