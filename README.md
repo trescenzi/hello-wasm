@@ -240,12 +240,11 @@ At this point we've touched on most of the capabilities of the WAT stack machine
 but we still have yet to print `Hello World`. This is where begin to see even
 more clearly why WASM is more of a compile target than a language you might want
 to write whole programs in. At the most basic level WASM only has
-numeric types: `i32`, `i64`, `f32`, and `f64`. Additionally there are also
-tables(expandable byte arrays), reference types(currently only implemented by Firefox),
-and value types(can be a reference or a number) however we won't be going into
+numeric types: `i32`, `i64`, `f32`, and `f64`. Additionally there are also tables (indexable "arrays" of function pointers), 
+memories(expandable byte arrays), and value types(can be a reference or a number) however we won't be going into
 those in this example.
 
-Because there is no string primitive, strings are simply contagious groups of
+Because there is no string primitive, strings are simply contiguous groups of
 memory with characters being encoded in utf8. In order to store those groups
 however we must allocate it in JavaScript and provide that allocated memory to
 the WASM runtime.
